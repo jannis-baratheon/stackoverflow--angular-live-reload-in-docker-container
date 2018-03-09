@@ -1,0 +1,11 @@
+version: '2'
+
+services:
+
+    client:
+        image: node:7
+        command: bash -c "ng set --global packageManager=yarn && cd /app && yarn install && yarn start"
+        volumes:
+            - ./testngapp:/app
+        ports: 
+            - "4200:4200"
